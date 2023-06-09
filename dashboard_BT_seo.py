@@ -3,11 +3,10 @@ import pandas as pd
 
 def process_files(device_type):
     # Percorsi dei file di input
-    file_path = f'/Users/cristianmarchisio/Python/cucinelli_dataviz/BT_crossbrowser_chrome_old.xlsx'
-    new_file_path = f'/Users/cristianmarchisio/Python/cucinelli_dataviz/BT_crossbrowser_chrome_new.xlsx'
+    file_path = f'/Users/cristianmarchisio/Python/cucinelli_dataviz/BT_{device_type}_old.xlsx'
+    new_file_path = f'/Users/cristianmarchisio/Python/cucinelli_dataviz/BT_{device_type}_new.xlsx'
 
     # Leggi i due file Excel
-    #test
     df_old = pd.read_excel(file_path)
     df_new = pd.read_excel(new_file_path)
 
@@ -44,7 +43,7 @@ def process_files(device_type):
     os.makedirs(output_folder, exist_ok=True)
 
     # Salva il DataFrame trasposto come file Excel nella cartella di output
-    output_file = os.path.join(output_folder, f'BT_crossbrowser_{device_type}.xlsx')
+    output_file = os.path.join(output_folder, f'BT_SEO_{device_type}.xlsx')
     comparison_df.to_excel(output_file)
 
     print(f"L'output è stato salvato in: {output_file}")
